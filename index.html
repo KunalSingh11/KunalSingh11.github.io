@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Ticket</title>
+    <style>
+        body {
+            background-color: #97D2EC;
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+            margin: 4px;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: orange;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <form id="myform1" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+        <input type=hidden name="orgid" value="00D5h000004EbSJ">
+        <input type=hidden name="retURL" value="http://google.com">
+
+        <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+        <label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+        <label for="subject">Subject</label><input id="subject" maxlength="80" name="subject" size="20"
+            type="text" /><br>
+
+        <label for="description">Description</label><textarea name="description"></textarea><br>
+
+        <input id="00N5h00000Cpvag" maxlength="8" name="00N5h00000Cpvag" size="20" type="hidden" /><br>
+
+        <input type="submit" name="submit">
+
+    </form>
+
+
+    <!-- Name for Parameter in Link = Student_ID for Testing -->
+
+    <script>
+
+        function getParameter(parameterName) {
+            let parameters = new URLSearchParams(window.location.search);
+            return parameters.get(parameterName);
+        }
+
+        const myForm = document.getElementById("myform1");
+        myForm.addEventListener("submit", function (e) {
+            const checkemail = document.getElementById("email");
+            if (!email) {
+                e.preventDefault();
+            } else {
+                document.getElementById("00N5h00000Cpvag").value = getParameter("Student_ID");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
